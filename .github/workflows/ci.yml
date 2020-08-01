@@ -17,6 +17,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
   Bump-Version:
+    needs: ESLint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
