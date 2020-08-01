@@ -1,0 +1,19 @@
+name: Bump version
+on:
+  push:
+    branches:
+      - bump-version
+    paths-ignore:
+      - 'package.json'
+      - 'CHANGELOG.md'
+      - 'README.md'
+jobs:
+  build-bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Bump version and push tag
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.ACTION_TOKEN }}
+          git-message: 'chore(bump-version): {version}'
