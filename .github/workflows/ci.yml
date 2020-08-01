@@ -1,4 +1,4 @@
-name: ESLint
+name: ESLint & Bump Version
 on:
   push:
     paths-ignore:
